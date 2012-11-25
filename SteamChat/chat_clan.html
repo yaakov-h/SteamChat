@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Clan Chat</title>
+		<style type="text/css">
+			html, body { padding: 0; margin: 0; border: 0; }
+			
+			body
+			{
+				background-attachment: fixed !important;
+				background-image: -webkit-linear-gradient(bottom, rgb(23,22,20) 0%, rgb(51,49,48) 100%);
+				font-family: sans-serif;
+				padding: 4px;
+			}
+			
+			span.action
+			{
+				font-style: italic;
+			}
+			
+			.state_online,
+			.state_away,
+			.state_busy,
+			.state_snooze
+			{
+				color: #75A5D0;
+			}
+			
+			.state_offline
+			{
+				color: #AFADAD;
+			}
+			
+			.state_ingame
+			{
+				color: #98C560;
+			}
+			
+			.text
+			{
+				color: white;
+			}
+			
+			.text.mine
+			{
+				color: #AFADAD;
+			}
+			
+			chat_table { width: 100%; height: 100%; }
+			
+		</style>
+		<script type="text/javascript" language="javascript" src="jquery-1.8.3.min.js"></script>
+		<script type="text/javascript" language="javascript" src="chat.js"></script>
+	</head>
+	<body>
+		<div id="chat_table">
+			<div class="text" style="text-decoration: underline;">Never tell your password to anyone.</div>
+		</div>
+	</body>
+</html>

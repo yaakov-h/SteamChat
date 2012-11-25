@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B11456056143464D9F536D0E /* libPods-SteamChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4253203547EB47B48FA35EDF /* libPods-SteamChat.a */; };
+		D7924D2116618F0800B823D0 /* jquery-1.8.3.min.js in Resources */ = {isa = PBXBuildFile; fileRef = D7924D2016618F0800B823D0 /* jquery-1.8.3.min.js */; };
+		D79BF36B16610201003E06BB /* SCClanTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D79BF36A16610201003E06BB /* SCClanTableViewController.m */; };
+		D79BF36F1661061A003E06BB /* SCClanChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D79BF36E1661061A003E06BB /* SCClanChatViewController.m */; };
 		D7A4D288165D99CB00DBFBE6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7A4D287165D99CB00DBFBE6 /* UIKit.framework */; };
 		D7A4D28A165D99CB00DBFBE6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7A4D289165D99CB00DBFBE6 /* Foundation.framework */; };
 		D7A4D28C165D99CB00DBFBE6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7A4D28B165D99CB00DBFBE6 /* CoreGraphics.framework */; };
@@ -16,13 +20,26 @@
 		D7A4D29A165D99CB00DBFBE6 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D7A4D299165D99CB00DBFBE6 /* Default.png */; };
 		D7A4D29C165D99CB00DBFBE6 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7A4D29B165D99CB00DBFBE6 /* Default@2x.png */; };
 		D7A4D29E165D99CB00DBFBE6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7A4D29D165D99CB00DBFBE6 /* Default-568h@2x.png */; };
+		D7A4D2A5165D99DB00DBFBE6 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D7A4D2A4165D99DB00DBFBE6 /* Podfile */; };
+		D7A4D2B4165D9F3300DBFBE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7A4D2B3165D9F3300DBFBE6 /* Main.storyboard */; };
+		D7A4D2B8165D9FCE00DBFBE6 /* SCLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A4D2B7165D9FCE00DBFBE6 /* SCLoginViewController.m */; };
+		D7A4D2BB165DA02400DBFBE6 /* SCSteamContext.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A4D2BA165DA02400DBFBE6 /* SCSteamContext.m */; };
+		D7FE09AB16618F7200702466 /* chat_clan.html in Resources */ = {isa = PBXBuildFile; fileRef = D7FE09AA16618F7200702466 /* chat_clan.html */; };
+		D7FE09C016619EFB00702466 /* chat.js in Resources */ = {isa = PBXBuildFile; fileRef = D7FE09BD16619EA700702466 /* chat.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4253203547EB47B48FA35EDF /* libPods-SteamChat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SteamChat.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6DB2A81999C43C88B1A604A /* Pods-SteamChat.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SteamChat.xcconfig"; path = "Pods/Pods-SteamChat.xcconfig"; sourceTree = SOURCE_ROOT; };
+		D7924D2016618F0800B823D0 /* jquery-1.8.3.min.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "jquery-1.8.3.min.js"; sourceTree = "<group>"; };
+		D79BF36916610201003E06BB /* SCClanTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCClanTableViewController.h; sourceTree = "<group>"; };
+		D79BF36A16610201003E06BB /* SCClanTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCClanTableViewController.m; sourceTree = "<group>"; };
+		D79BF36D1661061A003E06BB /* SCClanChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCClanChatViewController.h; sourceTree = "<group>"; };
+		D79BF36E1661061A003E06BB /* SCClanChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCClanChatViewController.m; sourceTree = "<group>"; };
 		D7A4D283165D99CB00DBFBE6 /* SteamChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SteamChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D7A4D287165D99CB00DBFBE6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		D7A4D289165D99CB00DBFBE6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		D7A4D28B165D99CB00DBFBE6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D7A4D287165D99CB00DBFBE6 /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D7A4D289165D99CB00DBFBE6 /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D7A4D28B165D99CB00DBFBE6 /* CoreGraphics.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		D7A4D28F165D99CB00DBFBE6 /* SteamChat-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SteamChat-Info.plist"; sourceTree = "<group>"; };
 		D7A4D291165D99CB00DBFBE6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D7A4D293165D99CB00DBFBE6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -32,6 +49,14 @@
 		D7A4D299165D99CB00DBFBE6 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		D7A4D29B165D99CB00DBFBE6 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		D7A4D29D165D99CB00DBFBE6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		D7A4D2A4165D99DB00DBFBE6 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		D7A4D2B3165D9F3300DBFBE6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		D7A4D2B6165D9FCE00DBFBE6 /* SCLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLoginViewController.h; sourceTree = "<group>"; };
+		D7A4D2B7165D9FCE00DBFBE6 /* SCLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLoginViewController.m; sourceTree = "<group>"; };
+		D7A4D2B9165DA02400DBFBE6 /* SCSteamContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSteamContext.h; sourceTree = "<group>"; };
+		D7A4D2BA165DA02400DBFBE6 /* SCSteamContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSteamContext.m; sourceTree = "<group>"; };
+		D7FE09AA16618F7200702466 /* chat_clan.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = chat_clan.html; sourceTree = "<group>"; };
+		D7FE09BD16619EA700702466 /* chat.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = chat.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +67,7 @@
 				D7A4D288165D99CB00DBFBE6 /* UIKit.framework in Frameworks */,
 				D7A4D28A165D99CB00DBFBE6 /* Foundation.framework in Frameworks */,
 				D7A4D28C165D99CB00DBFBE6 /* CoreGraphics.framework in Frameworks */,
+				B11456056143464D9F536D0E /* libPods-SteamChat.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,9 +77,11 @@
 		D7A4D278165D99CB00DBFBE6 = {
 			isa = PBXGroup;
 			children = (
+				D7A4D2A4165D99DB00DBFBE6 /* Podfile */,
 				D7A4D28D165D99CB00DBFBE6 /* SteamChat */,
 				D7A4D286165D99CB00DBFBE6 /* Frameworks */,
 				D7A4D284165D99CB00DBFBE6 /* Products */,
+				B6DB2A81999C43C88B1A604A /* Pods-SteamChat.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +99,7 @@
 				D7A4D287165D99CB00DBFBE6 /* UIKit.framework */,
 				D7A4D289165D99CB00DBFBE6 /* Foundation.framework */,
 				D7A4D28B165D99CB00DBFBE6 /* CoreGraphics.framework */,
+				4253203547EB47B48FA35EDF /* libPods-SteamChat.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -81,6 +110,14 @@
 				D7A4D296165D99CB00DBFBE6 /* SCAppDelegate.h */,
 				D7A4D297165D99CB00DBFBE6 /* SCAppDelegate.m */,
 				D7A4D28E165D99CB00DBFBE6 /* Supporting Files */,
+				D7A4D2B6165D9FCE00DBFBE6 /* SCLoginViewController.h */,
+				D7A4D2B7165D9FCE00DBFBE6 /* SCLoginViewController.m */,
+				D7A4D2B9165DA02400DBFBE6 /* SCSteamContext.h */,
+				D7A4D2BA165DA02400DBFBE6 /* SCSteamContext.m */,
+				D79BF36916610201003E06BB /* SCClanTableViewController.h */,
+				D79BF36A16610201003E06BB /* SCClanTableViewController.m */,
+				D79BF36D1661061A003E06BB /* SCClanChatViewController.h */,
+				D79BF36E1661061A003E06BB /* SCClanChatViewController.m */,
 			);
 			path = SteamChat;
 			sourceTree = "<group>";
@@ -88,6 +125,7 @@
 		D7A4D28E165D99CB00DBFBE6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D7924D2016618F0800B823D0 /* jquery-1.8.3.min.js */,
 				D7A4D28F165D99CB00DBFBE6 /* SteamChat-Info.plist */,
 				D7A4D290165D99CB00DBFBE6 /* InfoPlist.strings */,
 				D7A4D293165D99CB00DBFBE6 /* main.m */,
@@ -95,6 +133,9 @@
 				D7A4D299165D99CB00DBFBE6 /* Default.png */,
 				D7A4D29B165D99CB00DBFBE6 /* Default@2x.png */,
 				D7A4D29D165D99CB00DBFBE6 /* Default-568h@2x.png */,
+				D7A4D2B3165D9F3300DBFBE6 /* Main.storyboard */,
+				D7FE09AA16618F7200702466 /* chat_clan.html */,
+				D7FE09BD16619EA700702466 /* chat.js */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -109,6 +150,7 @@
 				D7A4D27F165D99CB00DBFBE6 /* Sources */,
 				D7A4D280165D99CB00DBFBE6 /* Frameworks */,
 				D7A4D281165D99CB00DBFBE6 /* Resources */,
+				BFFD3A9E1435494689F4A382 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -151,14 +193,36 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7FE09C016619EFB00702466 /* chat.js in Resources */,
 				D7A4D292165D99CB00DBFBE6 /* InfoPlist.strings in Resources */,
 				D7A4D29A165D99CB00DBFBE6 /* Default.png in Resources */,
 				D7A4D29C165D99CB00DBFBE6 /* Default@2x.png in Resources */,
 				D7A4D29E165D99CB00DBFBE6 /* Default-568h@2x.png in Resources */,
+				D7A4D2A5165D99DB00DBFBE6 /* Podfile in Resources */,
+				D7A4D2B4165D9F3300DBFBE6 /* Main.storyboard in Resources */,
+				D7924D2116618F0800B823D0 /* jquery-1.8.3.min.js in Resources */,
+				D7FE09AB16618F7200702466 /* chat_clan.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BFFD3A9E1435494689F4A382 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-SteamChat-resources.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D7A4D27F165D99CB00DBFBE6 /* Sources */ = {
@@ -167,6 +231,10 @@
 			files = (
 				D7A4D294165D99CB00DBFBE6 /* main.m in Sources */,
 				D7A4D298165D99CB00DBFBE6 /* SCAppDelegate.m in Sources */,
+				D7A4D2B8165D9FCE00DBFBE6 /* SCLoginViewController.m in Sources */,
+				D7A4D2BB165DA02400DBFBE6 /* SCSteamContext.m in Sources */,
+				D79BF36B16610201003E06BB /* SCClanTableViewController.m in Sources */,
+				D79BF36F1661061A003E06BB /* SCClanChatViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +304,7 @@
 		};
 		D7A4D2A2165D99CB00DBFBE6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6DB2A81999C43C88B1A604A /* Pods-SteamChat.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SteamChat/SteamChat-Prefix.pch";
@@ -247,6 +316,7 @@
 		};
 		D7A4D2A3165D99CB00DBFBE6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6DB2A81999C43C88B1A604A /* Pods-SteamChat.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SteamChat/SteamChat-Prefix.pch";
@@ -275,6 +345,7 @@
 				D7A4D2A3165D99CB00DBFBE6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

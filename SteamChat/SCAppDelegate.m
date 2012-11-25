@@ -1,9 +1,6 @@
 //
-//  SCAppDelegate.m
-//  SteamChat
-//
-//  Created by Yaakov on 22/11/12.
-//  Copyright (c) 2012 OpenSteamWorks. All rights reserved.
+// This file is subject to the software licence as defined in
+// the file 'LICENCE.txt' included in this source code package.
 //
 
 #import "SCAppDelegate.h"
@@ -12,10 +9,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
     return YES;
 }
 
