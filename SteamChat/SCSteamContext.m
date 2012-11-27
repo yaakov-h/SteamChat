@@ -40,7 +40,7 @@ static SCSteamContext * globalContext = nil;
 
 - (void) dealloc
 {
-	[[NSNotificationCenter defaultCenter] removeObject:self];
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (uint64_t) steamId
