@@ -33,6 +33,21 @@ var addChatLine = function (name, state, text, myMessage)
 	 
 	 $('#chat_table').append(row);
  };
- 
- window.steam_addChatLine = addChatLine;
- window.steam_addActionLine = addActionLine;
+
+var addStateChangeLine = function (text)
+{
+	var table = $('#chat_table');
+	
+	var actionCell = $('<span class="notice"></span>');
+	
+	actionCell.text(unescape(text));
+	
+	var row = $('<div></div>');
+	row.append(actionCell);
+	
+	$('#chat_table').append(row);
+};
+
+window.steam_addChatLine = addChatLine;
+window.steam_addActionLine = addActionLine;
+window.steam_addStateChangeLine = addStateChangeLine;

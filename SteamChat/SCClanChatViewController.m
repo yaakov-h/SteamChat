@@ -11,6 +11,9 @@
 #import <CRBoilerplate/CRBoilerplate.h>
 #import <SKSteamKit/SKSteamClient.h>
 #import <SKSteamKit/SKSteamLoggedOffInfo.h>
+#import <SKSteamKit/SKSteamChatRoom.h>
+#import <SKSteamKit/SKEnterChatRoomInfo.h>
+#import <SKSteamKit/SKSteamID.h>
 
 @interface SCClanChatViewController ()
 
@@ -19,6 +22,7 @@
 @implementation SCClanChatViewController
 {
 	SCSteamContext * _context;
+	SKSteamChatRoom * _chatRoom;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -38,12 +42,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 	
 	_context = [SCSteamContext globalContext];
 	
@@ -51,6 +49,10 @@
 	[center addObserver:self selector:@selector(didRecieveChatMessage:) name:SKSteamChatMessageInfoNotification object:nil];
 	[center addObserver:self selector:@selector(steamClientDidDisconnect:) name:SKSteamClientDisconnectedNotification object:nil];
 	[center addObserver:self selector:@selector(steamClientDidGetLoggedOut:) name:SKSteamLoggedOffNotification object:nil];
+	[center addObserver:self selector:@selector(didEnterChatRoom:) name:SKEnterChatRoomInfoNotification object:nil];
+	[center addObserver:self selector:@selector(chatRoomDidUpdateMembers:) name:SKSteamChatRoomMembersChangedNotification object:nil];
+	
+	[_chatMessageEntryTextField setEnabled:NO];
 	
 	[_context joinClanChatRoom:_clan];
 	self.navigationItem.title = _clan.name;
@@ -196,4 +198,105 @@
 	[self.navigationController popViewControllerAnimated:YES];
 }
 
+- (void) didEnterChatRoom:(NSNotification *)notification
+{
+	SKEnterChatRoomInfo * info = [notification steamInfo];
+	SKSteamID * chatID = [SKSteamID steamIDWithUnsignedLongLong:info.chatRoom.steamId];
+	SKSteamID * clanID = [SKSteamID steamIDWithUnsignedLongLong:_clan.steamId];
+	
+	if (chatID.universe == clanID.universe && chatID.accountID == clanID.accountID && chatID.instance == SKSteamIDChatInstanceFlagClan)
+	{
+		_chatRoom = info.chatRoom;
+		switch (info.response)
+		{
+			case EChatRoomEnterResponseSuccess:
+				[_chatMessageEntryTextField setEnabled:YES];
+				break;
+			case EChatRoomEnterResponseBanned:
+				[[[UIAlertView alloc] initWithTitle:nil message:[NSString stringWithFormat:@"You may not join the %@ chat room as you have been banned.", _clan.name] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
+				break;
+			case EChatRoomEnterResponseDoesntExist:
+			case EChatRoomEnterResponseCommunityBan:
+			case EChatRoomEnterResponseClanDisabled:
+			case EChatRoomEnterResponseLimited:
+			case EChatRoomEnterResponseError:
+			case EChatRoomEnterResponseNotAllowed:
+			case EChatRoomEnterResponseFull:
+			default:
+				[[[UIAlertView alloc] initWithTitle:@"Error" message:[NSString stringWithFormat:@"Unable to join chat room - Error %d", info.response] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
+				break;
+		}
+	}
+}
+
+- (void) chatRoomDidUpdateMembers:(NSNotification *)notification
+{
+	NSDictionary * info = [notification steamInfo];
+	if (info[SKChatRoomKey] == _chatRoom)
+	{
+		SKSteamFriend * friend = info[SKChatRoomChatterActedOnKey];
+		SKSteamFriend * actedBy = info[SKChatRoomChaterActedByKey];
+		EChatMemberStateChange stateChange = [info[SKChatRoomChatterStateChangeKey] intValue];
+		
+		NSString * stateMessage = nil;
+		
+		if (friend.steamId == _context.steamId)
+		{
+			switch (stateChange)
+			{
+				case EChatMemberStateChangeKicked:
+					stateMessage = [NSString stringWithFormat:@"You have been kicked by %@", actedBy.personaName];
+					break;
+				case EChatMemberStateChangeBanned:
+					stateMessage = [NSString stringWithFormat:@"You have been banned by %@", actedBy.personaName];
+					break;
+				
+				default: break;
+			}
+			
+			if (stateMessage != nil)
+			{
+				[[[UIAlertView alloc] initWithTitle:nil message:stateMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+				[self.chatMessageEntryTextField setEnabled:NO];
+				return;
+			}
+		}
+		
+		
+		switch (stateChange)
+		{
+			case EChatMemberStateChangeBanned:
+				stateMessage = [NSString stringWithFormat:@"was banned by %@.", actedBy.personaName];
+				break;
+			case EChatMemberStateChangeDisconnected:
+				stateMessage = @"disconnected.";
+				break;
+			case EChatMemberStateChangeEntered:
+				stateMessage = @"entered chat.";
+				break;
+			case EChatMemberStateChangeKicked:
+				stateMessage = [NSString stringWithFormat:@"was kicked by %@.", actedBy.personaName];
+				break;
+			case EChatMemberStateChangeLeft:
+				stateMessage = @"left chat.";
+				break;
+			case EChatMemberStateChangeMax:
+				stateMessage = @"broke Steam.";
+				break;
+		}
+		
+		if (friend != nil && stateMessage != nil)
+		{
+			NSString * message = [NSString stringWithFormat:@"%@ %@", friend.personaName, stateMessage];
+			
+			NSString * functionCall = [NSString stringWithFormat:@"%@(\"%@\");", @"window.steam_addStateChangeLine", [message stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+			[self.webView stringByEvaluatingJavaScriptFromString:functionCall];
+		}
+	}
+}
+
+- (IBAction)leaveChatRoom:(id)sender {
+	[_context leaveChatRoom:_chatRoom];
+	[self dismissViewControllerAnimated:YES completion:^{}];
+}
 @end

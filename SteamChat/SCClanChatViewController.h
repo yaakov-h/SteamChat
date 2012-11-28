@@ -10,5 +10,7 @@
 
 @property (nonatomic, strong) SKSteamClan * clan;
 @property (nonatomic, weak) IBOutlet UIWebView * webView;
+@property (weak, nonatomic) IBOutlet UITextField *chatMessageEntryTextField;
+- (IBAction)leaveChatRoom:(id)sender;
 
 @end

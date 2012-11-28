@@ -6,6 +6,7 @@
 #import <Foundation/Foundation.h>
 #import <CRBoilerplate/CRBoilerplate.h>
 #import <SKSteamKit/SKSteamClan.h>
+#import <SKSteamKit/SKSteamChatRoom.h>
 
 @interface SCSteamContext : NSObject
 
@@ -23,6 +24,7 @@
 
 - (NSArray *) clanChatMessagesForClan:(SKSteamClan *)clan;
 - (void) joinClanChatRoom:(SKSteamClan *)clan;
+- (void) leaveChatRoom:(SKSteamChatRoom *)chat;
 - (BOOL) sendMessage:(NSString*)message ofType:(EChatEntryType)type toClanChatRoom:(SKSteamClan *)clan;
 
 @end

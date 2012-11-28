@@ -111,6 +111,11 @@ static SCSteamContext * globalContext = nil;
 	[_client.steamFriends enterChatRoomForClanID:clan.steamId];
 }
 
+- (void) leaveChatRoom:(SKSteamChatRoom *)chat
+{
+	[_client.steamFriends leaveChatRoomWithID:chat.steamId];
+}
+
 - (BOOL) sendMessage:(NSString*)message ofType:(EChatEntryType)type toClanChatRoom:(SKSteamClan *)clan
 {
 	SKSteamID * clanID = [SKSteamID steamIDWithUnsignedLongLong:clan.steamId];

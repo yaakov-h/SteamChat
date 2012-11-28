@@ -108,7 +108,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="Q1E-8v-1Wq" kind="push" identifier="SCShowClanChat" id="WCu-gF-QMJ"/>
+                                    <segue destination="bdW-EM-Cuj" kind="modal" identifier="SCShowClanChat" modalTransitionStyle="coverVertical" id="WCu-gF-QMJ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -151,15 +151,22 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Tfn-Vj-BR0"/>
+                    <navigationItem key="navigationItem" id="Tfn-Vj-BR0">
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="WiX-qF-YsC">
+                            <connections>
+                                <action selector="leaveChatRoom:" destination="Q1E-8v-1Wq" id="7B9-Tt-nrT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="chatMessageEntryTextField" destination="nP7-uZ-tWT" id="tai-Zz-zxD"/>
                         <outlet property="view" destination="OAe-1H-MLJ" id="Upv-Ez-rgo"/>
                         <outlet property="webView" destination="Uh3-Wb-cl0" id="GO5-Xv-eQZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FYV-Re-sWi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1635" y="-364"/>
+            <point key="canvasLocation" x="2161" y="-364"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="30k-mP-IR4">
@@ -179,11 +186,32 @@
             </objects>
             <point key="canvasLocation" x="601" y="-364"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="caA-kk-2bG">
+            <objects>
+                <navigationController id="bdW-EM-Cuj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="lm6-5p-szh"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EkK-OJ-bfi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Q1E-8v-1Wq" kind="relationship" relationship="rootViewController" id="UBr-gN-oBz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7zC-5Y-v2k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1635" y="-364"/>
+        </scene>
     </scenes>
     <classes>
         <class className="SCClanChatViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SCClanChatViewController.h"/>
             <relationships>
+                <relationship kind="action" name="leaveChatRoom:"/>
+                <relationship kind="outlet" name="chatMessageEntryTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
             </relationships>
         </class>

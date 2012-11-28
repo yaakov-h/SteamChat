@@ -99,7 +99,9 @@
 	if ([segue.identifier isEqualToString:@"SCShowClanChat"])
 	{
 		SKSteamClan * clan = [_context.clans objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
-		SCClanChatViewController * dest = segue.destinationViewController;
+		UINavigationController * navcontroller = segue.destinationViewController;
+		SCClanChatViewController * dest = (SCClanChatViewController *)navcontroller.topViewController;
+		
 		dest.clan = clan;
 	}
 }
