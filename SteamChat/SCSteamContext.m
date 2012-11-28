@@ -139,6 +139,8 @@ static SCSteamContext * globalContext = nil;
 - (void) steamClientDidDisconnect:(NSNotification *)notification
 {
 	_isConnected = NO;
+	
+	[[[UIAlertView alloc] initWithTitle:nil message:@"You have been disconnected from Steam. Please log in again." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
 }
 
 - (void) steamClientDidGetLoggedOut:(NSNotification *)notification
