@@ -14,6 +14,7 @@
 #import <SKSteamKit/SKSteamChatRoom.h>
 #import <SKSteamKit/SKEnterChatRoomInfo.h>
 #import <SKSteamKit/SKSteamID.h>
+#import "SCChatMembersViewController.h"
 
 @interface SCClanChatViewController ()
 
@@ -299,4 +300,14 @@
 	[_context leaveChatRoom:_chatRoom];
 	[self dismissViewControllerAnimated:YES completion:^{}];
 }
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+	if ([[segue identifier] isEqualToString:@"SCShowChatRoomMembers"])
+	{
+		SCChatMembersViewController * vc = segue.destinationViewController;
+		vc.room = _chatRoom;
+	}
+}
+
 @end

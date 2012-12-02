@@ -5,36 +5,36 @@ EXTERNAL SOURCES:
   SKSteamKit/arc: 
     :podspec: https://raw.github.com/yaakov-h/SKSteamKit/master/SKSteamKit.podspec
 
+COCOAPODS: 0.15.2
+
+SPEC CHECKSUMS: 
+  ProtocolBuffers: 4cfc0be30608c699905cdd3e0b82664a24d71d59
+  zipzap: 765e2b4777fc50b96b442ed1d9bb2684c0a41ca0
+  SKSteamKit/nonarc: 0696570b910c630fbbbdb3db8fb3fb7788027961
+  OpenSSL: ac77929c993cfd0c436027f51e5c4d52c8be296a
+  CocoaAsyncSocket: 70f5de3c1ba13526c23df75fc98a0ea3049aa19c
+  SKSteamKit/arc: 0696570b910c630fbbbdb3db8fb3fb7788027961
+  CRBoilerplate: f90c29aa7323994213fe7e1a85e47956ae4c3b15
+
+DEPENDENCIES: 
+- SKSteamKit/arc (from `https://raw.github.com/yaakov-h/SKSteamKit/master/SKSteamKit.podspec')
+- SKSteamKit/nonarc (from `https://raw.github.com/yaakov-h/SKSteamKit/master/SKSteamKit.podspec')
+
 PODS: 
-- CRBoilerplate (0.1.3)
+- CRBoilerplate (0.1.4)
 - CocoaAsyncSocket (0.0.1)
 - OpenSSL (1.0.1c)
 - ProtocolBuffers (0.1.0)
-- SKSteamKit/arc (0.1.2): 
+- SKSteamKit/arc (0.1.6): 
   - CRBoilerplate (from `https://raw.github.com/yaakov-h/SKSteamKit/master/podspecs/CRBoilerplate.podspec')
   - CocoaAsyncSocket (~> 0.0.1)
   - OpenSSL (from `https://raw.github.com/yaakov-h/SKSteamKit/master/podspecs/OpenSSL.podspec')
   - ProtocolBuffers (from `https://raw.github.com/yaakov-h/SKSteamKit/master/podspecs/ProtocolBuffers.podspec')
   - zipzap (from `https://raw.github.com/yaakov-h/SKSteamKit/master/podspecs/zipzap.podspec')
-- SKSteamKit/nonarc (0.1.2): 
+- SKSteamKit/nonarc (0.1.6): 
   - CRBoilerplate (from `https://raw.github.com/yaakov-h/SKSteamKit/master/podspecs/CRBoilerplate.podspec')
   - CocoaAsyncSocket (~> 0.0.1)
   - OpenSSL (from `https://raw.github.com/yaakov-h/SKSteamKit/master/podspecs/OpenSSL.podspec')
   - ProtocolBuffers (from `https://raw.github.com/yaakov-h/SKSteamKit/master/podspecs/ProtocolBuffers.podspec')
   - zipzap (from `https://raw.github.com/yaakov-h/SKSteamKit/master/podspecs/zipzap.podspec')
 - zipzap (3.1.0)
-
-COCOAPODS: 0.15.2
-
-DEPENDENCIES: 
-- SKSteamKit/arc (from `https://raw.github.com/yaakov-h/SKSteamKit/master/SKSteamKit.podspec')
-- SKSteamKit/nonarc (from `https://raw.github.com/yaakov-h/SKSteamKit/master/SKSteamKit.podspec')
-
-SPEC CHECKSUMS: 
-  SKSteamKit/nonarc: d2862f73d8c448d924ab470761a06afd452e14e4
-  CRBoilerplate: 74581dd86409f6c1cb04a4bbab4b0d337700f8d4
-  OpenSSL: ac77929c993cfd0c436027f51e5c4d52c8be296a
-  zipzap: 765e2b4777fc50b96b442ed1d9bb2684c0a41ca0
-  ProtocolBuffers: 4cfc0be30608c699905cdd3e0b82664a24d71d59
-  CocoaAsyncSocket: 70f5de3c1ba13526c23df75fc98a0ea3049aa19c
-  SKSteamKit/arc: d2862f73d8c448d924ab470761a06afd452e14e4

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B11456056143464D9F536D0E /* libPods-SteamChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4253203547EB47B48FA35EDF /* libPods-SteamChat.a */; };
 		D7924D2116618F0800B823D0 /* jquery-1.8.3.min.js in Resources */ = {isa = PBXBuildFile; fileRef = D7924D2016618F0800B823D0 /* jquery-1.8.3.min.js */; };
+		D795906C166A43CE00334646 /* SCChatMembersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D795906B166A43CE00334646 /* SCChatMembersViewController.m */; };
 		D79BF36B16610201003E06BB /* SCClanTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D79BF36A16610201003E06BB /* SCClanTableViewController.m */; };
 		D79BF36F1661061A003E06BB /* SCClanChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D79BF36E1661061A003E06BB /* SCClanChatViewController.m */; };
 		D7A4D288165D99CB00DBFBE6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7A4D287165D99CB00DBFBE6 /* UIKit.framework */; };
@@ -32,6 +33,8 @@
 		4253203547EB47B48FA35EDF /* libPods-SteamChat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SteamChat.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6DB2A81999C43C88B1A604A /* Pods-SteamChat.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SteamChat.xcconfig"; path = "Pods/Pods-SteamChat.xcconfig"; sourceTree = SOURCE_ROOT; };
 		D7924D2016618F0800B823D0 /* jquery-1.8.3.min.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "jquery-1.8.3.min.js"; sourceTree = "<group>"; };
+		D795906A166A43CE00334646 /* SCChatMembersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCChatMembersViewController.h; path = ../SCChatMembersViewController.h; sourceTree = "<group>"; };
+		D795906B166A43CE00334646 /* SCChatMembersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCChatMembersViewController.m; path = ../SCChatMembersViewController.m; sourceTree = "<group>"; };
 		D79BF36916610201003E06BB /* SCClanTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCClanTableViewController.h; sourceTree = "<group>"; };
 		D79BF36A16610201003E06BB /* SCClanTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCClanTableViewController.m; sourceTree = "<group>"; };
 		D79BF36D1661061A003E06BB /* SCClanChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCClanChatViewController.h; sourceTree = "<group>"; };
@@ -118,6 +121,8 @@
 				D79BF36A16610201003E06BB /* SCClanTableViewController.m */,
 				D79BF36D1661061A003E06BB /* SCClanChatViewController.h */,
 				D79BF36E1661061A003E06BB /* SCClanChatViewController.m */,
+				D795906A166A43CE00334646 /* SCChatMembersViewController.h */,
+				D795906B166A43CE00334646 /* SCChatMembersViewController.m */,
 			);
 			path = SteamChat;
 			sourceTree = "<group>";
@@ -235,6 +240,7 @@
 				D7A4D2BB165DA02400DBFBE6 /* SCSteamContext.m in Sources */,
 				D79BF36B16610201003E06BB /* SCClanTableViewController.m in Sources */,
 				D79BF36F1661061A003E06BB /* SCClanChatViewController.m in Sources */,
+				D795906C166A43CE00334646 /* SCChatMembersViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
